@@ -13,27 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Solvers">
+      <UniqueIdentifier>{7c4713f3-725f-4657-b2cc-55c9e070bba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Solvers">
+      <UniqueIdentifier>{09af81ce-946c-4654-a53c-ca3fef650a6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PizzaOrderSovler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="OrderParser.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PizzaOrderSovler.cpp">
+      <Filter>Source Files\Solvers</Filter>
+    </ClCompile>
+    <ClCompile Include="GreedySolver.cpp">
+      <Filter>Source Files\Solvers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pizza.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PizzaOrderSolver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="OrderParser.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GreedySolver.h">
+      <Filter>Header Files\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="PizzaOrderSolver.h">
+      <Filter>Header Files\Solvers</Filter>
+    </ClInclude>
+    <ClInclude Include="OstoolsSolver.h">
+      <Filter>Header Files\Solvers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

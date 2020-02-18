@@ -1,61 +1,27 @@
 #include "PizzaOrderSolver.h"
 
+#include <cassert>
 #include <queue>
 
-namespace
+#include "GreedySolver.h"
+
+std::vector<Pizza> PizzaOrderSolver::solveOrder(const std::vector<Pizza>& inpPizzaList, int inpMaxSlices, SolverType inpSolverType)
 {
-
-class solverPizzaComparator
-{
-public:
-	bool operator() (const Pizza& lhs, const Pizza& rhs)
+	switch (inpSolverType)
 	{
-		return lhs.getNumSlice() < rhs.getNumSlice();
+	case SolverType::GREEDY:
+	{
+		return GreedySolver::solveOrder(inpPizzaList, inpMaxSlices);
+	}
+	case SolverType::OS_TOOLS:
+	{
+
+	}
+	default:
+	{
+		assert(false);
+		//no possible
 	}
 
-};
-
-class pizzaIdComparator
-{
-public:
-	bool operator() (const Pizza& lhs, const Pizza& rhs)
-	{
-		return lhs.getId() > rhs.getId();
 	}
-
-};
-
-}
-
-std::vector<Pizza> PizzaOrderSolver::solveOrder(const std::vector<Pizza>& inpPizzaList, int inpMaxSlices)
-{
-	//Sort by size from largest to smallest first
-	std::priority_queue<Pizza, std::vector<Pizza>, solverPizzaComparator> pizzaQueue;
-	for (const auto& pizza : inpPizzaList)
-	{
-		pizzaQueue.emplace(pizza);
-	}
-
-	std::priority_queue<Pizza, std::vector<Pizza>, pizzaIdComparator> outputQueue;
-	int remainingSize = inpMaxSlices;
-	//Add in the pizza into order list from largest to smallest, throw if cant fit in
-	//Sort by Id at the same time
-	while (!pizzaQueue.empty())
-	{
-		auto& nextPizza = pizzaQueue.top();
-		if (nextPizza.getNumSlice() <= remainingSize)
-		{
-			remainingSize -= nextPizza.getNumSlice();
-			outputQueue.emplace(nextPizza);
-		}
-		pizzaQueue.pop();
-	}
-
-	std::vector<Pizza> outputOrder;
-	while (!outputQueue.empty())
-	{
-		outputOrder.emplace_back(outputQueue.top());
-		outputQueue.pop();
-	}
-	return outputOrder;
 }

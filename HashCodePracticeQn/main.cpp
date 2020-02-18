@@ -16,7 +16,7 @@ int main()
 
 	if (readSuccess)
 	{
-		auto outputOrder = PizzaOrderSolver::solveOrder(pizzaList, maxOrderSize);
+		auto outputOrder = PizzaOrderSolver::solveOrder(pizzaList, maxOrderSize, SolverType::GREEDY);
 
 		int score = 0;
 		for (const auto& pizza : outputOrder)

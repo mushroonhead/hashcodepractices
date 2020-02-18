@@ -138,12 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GreedySolver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OrderParser.cpp" />
     <ClCompile Include="PizzaOrderSovler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GreedySolver.h" />
     <ClInclude Include="OrderParser.h" />
+    <ClInclude Include="OstoolsSolver.h" />
     <ClInclude Include="Pizza.h" />
     <ClInclude Include="PizzaOrderSolver.h" />
   </ItemGroup>
