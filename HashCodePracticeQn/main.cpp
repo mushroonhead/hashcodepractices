@@ -4,7 +4,7 @@
 #include "PizzaOrderSolver.h"
 #include "OrderParser.h"
 
-std::string inputFilePath = "../HashCodePracticeQn/ProblemSet/e_also_big.in";
+std::string inputFilePath = "../HashCodePracticeQn/ProblemSet/a_example.in";
 std::string outputFileDir = "../HashCodePracticeQn/ProblemSet/";
 
 int main()

@@ -99,10 +99,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(OR_TOOLS)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OR_TOOLS)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>jniortools.dll;ortools.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -141,12 +144,20 @@
     <ClCompile Include="GreedySolver.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="OrderParser.cpp" />
+    <ClCompile Include="OrtoolsSolver.cpp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OR_TOOLS)\tools\make SOURCE=%(Identity)</Command>
+      <RootFolder Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </RootFolder>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FileName).obj</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(OR_TOOLS)</AdditionalInputs>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="PizzaOrderSovler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GreedySolver.h" />
     <ClInclude Include="OrderParser.h" />
-    <ClInclude Include="OstoolsSolver.h" />
+    <ClInclude Include="OrtoolsSolver.h" />
     <ClInclude Include="Pizza.h" />
     <ClInclude Include="PizzaOrderSolver.h" />
   </ItemGroup>

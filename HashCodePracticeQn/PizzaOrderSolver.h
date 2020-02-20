@@ -9,7 +9,7 @@
 enum class SolverType
 {
 	GREEDY,
-	OS_TOOLS
+	OR_TOOLS
 };
 
 //Purpose:

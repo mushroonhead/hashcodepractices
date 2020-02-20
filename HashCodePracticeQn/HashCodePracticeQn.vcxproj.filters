@@ -33,6 +33,9 @@
     <ClCompile Include="GreedySolver.cpp">
       <Filter>Source Files\Solvers</Filter>
     </ClCompile>
+    <ClCompile Include="OrtoolsSolver.cpp">
+      <Filter>Source Files\Solvers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pizza.h">
@@ -47,7 +50,7 @@
     <ClInclude Include="PizzaOrderSolver.h">
       <Filter>Header Files\Solvers</Filter>
     </ClInclude>
-    <ClInclude Include="OstoolsSolver.h">
+    <ClInclude Include="OrtoolsSolver.h">
       <Filter>Header Files\Solvers</Filter>
     </ClInclude>
   </ItemGroup>
